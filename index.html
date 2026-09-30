@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Make contact, WhatsApp, phone, SMS, email and website QR codes in your browser. Free downloads. No account needed." />
+  <meta name="theme-color" content="#17201b" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>PingPop — A little square. A new connection.</title>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="PingPop home"><span class="brand-mark">p.</span>pingpop<span class="brand-dot">®</span></a><span class="top-note">NO SIGNUP. JUST CONNECT.</span><a class="help-link" href="#how">How it works</a></header>
+  <main>
+    <section class="intro"><span class="eyebrow">SMALL CODE. BIG HELLO.</span><h1>Make your next<br>connection <em>pop.</em></h1><p>Your details, one scan away. Create a QR code and take it anywhere.</p></section>
+    <div class="workspace">
+      <section class="editor" aria-labelledby="editor-title">
+        <div class="section-heading"><span class="step">01</span><h2 id="editor-title">What are we sharing?</h2><span class="tiny">PICK YOUR PING</span></div>
+        <div class="modes" role="group" aria-label="QR code type">
+          <button type="button" data-mode="contact" aria-pressed="true">▣ <span>Contact</span></button>
+          <button type="button" data-mode="whatsapp" aria-pressed="false">◉ <span>WhatsApp</span></button>
+          <button type="button" data-mode="phone" aria-pressed="false">☎ <span>Call</span></button>
+          <button type="button" data-mode="email" aria-pressed="false">✉ <span>Email</span></button>
+          <button type="button" data-mode="sms" aria-pressed="false">☏ <span>SMS</span></button>
+          <button type="button" data-mode="website" aria-pressed="false">↗ <span>Website</span></button>
+        </div>
+        <div class="section-heading details-heading"><span class="step">02</span><h2>Add your details</h2></div>
+        <form id="details" novalidate>
+          <div class="field-grid">
+            <label data-for="contact">First name *<input name="firstName" autocomplete="given-name" maxlength="60" placeholder="Your first name"></label>
+            <label data-for="contact">Last name<input name="lastName" autocomplete="family-name" maxlength="60" placeholder="Your last name"></label>
+            <label data-for="contact phone sms whatsapp" class="wide">Mobile number <span id="phone-required">*</span><input name="phone" type="tel" autocomplete="tel" maxlength="25" placeholder="+264 81 234 5678"><small>Include the country code, e.g. +264. No leading local 0 after it.</small></label>
+            <label data-for="contact email" class="wide">Email <span id="email-required"></span><input name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com"></label>
+            <label data-for="contact" class="wide">Company / organisation<input name="company" autocomplete="organization" maxlength="100" placeholder="Where you make things happen"></label>
+            <label data-for="contact website" class="wide">Website <span id="website-required"></span><input name="website" type="url" maxlength="300" placeholder="https://your-website.com"></label>
+            <label data-for="email" class="wide">Subject<input name="subject" maxlength="150" placeholder="Let's connect"></label>
+            <label data-for="email sms whatsapp" class="wide">Message<textarea name="message" maxlength="500" rows="3" placeholder="Hey! Great to meet you."></textarea></label>
+          </div>
+          <p id="validation" class="validation" role="status" aria-live="polite"></p>
+          <div class="customise"><div><label for="color">Make it yours</label><select id="color"><option value="#17201b">Midnight green</option><option value="#173f8a">Electric blue</option><option value="#6b2469">Berry purple</option><option value="#000000">Classic black</option></select></div><div><label for="photo">Photo / logo (preview only)</label><input id="photo" type="file" accept="image/png,image/jpeg,image/webp"><button id="remove-photo" class="text-button" type="button" hidden>Remove photo</button></div></div>
+          <label class="remember"><input id="remember" type="checkbox">Remember my details on this device</label>
+          <div class="form-bottom"><span>No details are sent to a server.</span><button id="clear" type="button" class="text-button">Clear details</button></div>
+        </form>
+      </section>
+      <aside class="preview-panel" aria-labelledby="preview-title">
+        <div class="preview-heading"><span class="eyebrow">YOUR LITTLE CONVERSATION STARTER</span><span class="live">LIVE PREVIEW</span></div>
+        <div class="contact-card"><div class="card-top"><span class="mini-brand">pingpop.</span><span id="type-label">CONTACT CARD</span></div><div class="avatar" id="avatar">P</div><img id="avatar-image" class="avatar" alt="Your chosen profile photo" hidden><h2 id="preview-title">Your next hello</h2><p id="preview-subtitle">Add your details to get started</p><div class="qr-wrap"><img id="qr" alt="Generated QR code" hidden><div id="empty-qr"><span>＋</span><strong>A connection starts here</strong><small>Your QR appears as you type.</small></div></div><p class="scan-label" id="scan-label">SCAN TO SAVE MY CONTACT</p><div class="card-footer"><span>Made to be shared.</span><span>✳</span></div></div>
+        <div class="downloads"><button id="png" class="primary" disabled>Download PNG</button><button id="svg" class="secondary" disabled>SVG</button></div>
+        <div class="secondary-actions"><button id="copy" class="text-button" disabled>Copy content</button><button id="vcf" class="text-button" disabled>Download contact (.vcf)</button></div>
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        <p class="preview-note">The QR contains the details you enter. Anyone with it can read them. Test a scan before printing.</p>
+      </aside>
+    </div>
+    <section id="how" class="how"><div><span>01 / CREATE</span><h3>Make it personal.</h3><p>Choose a type, add your details and pick a colour.</p></div><div><span>02 / SHARE</span><h3>Send a little square.</h3><p>Download it for a business card, poster or your phone.</p></div><div><span>03 / CONNECT</span><h3>Let the hellos happen.</h3><p>Scan with a camera or QR app. Saving a contact or sending a message still needs confirmation.</p></div></section>
+  </main>
+  <footer><a class="brand" href="/">pingpop.</a><span>Built for real-world hellos.</span><span>Browser-only · No tracking scripts</span></footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

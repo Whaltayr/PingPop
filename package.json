@@ -1,0 +1,10 @@
+{
+  "name": "pingpop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite --host 127.0.0.1", "build": "vite build", "preview": "vite preview --host 127.0.0.1", "test": "node --test tests/*.test.js" },
+  "dependencies": { "qrcode": "1.5.4" },
+  "devDependencies": { "vite": "^7.1.0" },
+  "engines": { "node": ">=22.12.0" }
+}
